@@ -8,21 +8,21 @@ temp = []
 connection = sqlite3.connect("climate.db")
 cursor = connection.cursor()
 
-cursor.execute("SELECT Year FROM ClimateData")
-result = cursor.fetchall()
-for i in result:
-    years.append(i)
-
-cursor.execute("SELECT CO2 FROM ClimateData")
-result = cursor.fetchall()
-for i in result:
-    co2.append(i)
 
 cursor.execute("SELECT Temperature FROM ClimateData")
 result = cursor.fetchall()
 for i in result:
     temp.append(i)
 
+cursor.execute("SELECT Co2 FROM ClimateData")
+result = cursor.fetchall()
+for i in result:
+    co2.append(i)
+
+cursor.execute("SELECT Year FROM ClimateData")
+result = cursor.fetchall()
+for i in result:
+    years.append(i)
 
 def printRes(r):
     for l in r:
